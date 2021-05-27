@@ -1,0 +1,92 @@
+/* body {
+    padding-top: 5rem;
+} */
+/* .starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+
+@font-face {
+    font-family: "FuenteCol";
+    src: url("/Exo_2/Exo2-VariableFont_wght.ttf");
+}
+
+
+.nvColor{
+    background-color: black;
+}
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.color-a {
+    background: #FFD133;
+}
+
+.icon-a {
+    color: black;
+}
+
+.categoria {
+    height: 40px;
+    width: 100%;
+}
+
+
+
+.bg-dark {
+    background-color: #040707 !important;
+}
+
+.btn-secondary {
+    background-color: #FBAF19 !important;
+    color: #040707;
+}
+
+/*.card {
+    display: contents;
+    border: 0.1em solid #040707 !important;
+} */
+.card:hover {
+    /* display: contents !important; */
+    background-color: #FBAF19 !important;
+    color: #fff;
+    /* width: 99px; height: 99px; */
+}
+
+.relleno, .sinrelleno {
+    color: rgb(226, 170, 16);
+}
+
+.relleno:hover{
+    color: #040707;
+}
+
+.app-img{
+    cursor: pointer;
+    
+}
+
+.m-1 {
+    margin: .25rem!important;
+    padding: 5px;
+    width: 110%;
+}
+
+.imgModal{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+     width: 150px;
+}
+.imgModal2{
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    /* border-radius: 4px; */
+    padding: 5px;
+     width: 100px;
+}
