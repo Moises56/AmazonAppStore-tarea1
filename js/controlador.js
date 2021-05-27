@@ -230,76 +230,90 @@ for (let i = 1; i <= 50; i++) {
     `<option value="img/app-icons/${i}.webp">App${i}</option>`
 }
 
+
+//*Guardar una APP
 var nombre = "categorias"
+var nombre2 = "Categorias"
 function newApp(){
+    categoriaActual = $("#categoria").val()
+    // console.log(nombre+n);
+    nomB = nombre+n
+    nomB2 = nombre2+n
+console.log(n);
+console.log( categoriaActual);
+    if (categoriaActual == null) {
+        categoriaActual = 'categorias0'
+    }
+
     // indiceAppSelect = i;
-    let app = categoria.aplicaciones;
-    let nombreC = categoria.nombreCategoria;
-    console.log(nombreC);
-    // console.log(app.toString());
+    let app = categoria
+    apk = app.aplicaciones
+    // for (const i in app) {
+        // console.log(app.aplicaciones);
+        // console.log(app.nombreCategoria);
+        nome = app.nombreCategoria
+        console.log(nome);
+        
+        aplicaciones = categorias
+        if (nomB == nome) {
+            console.log(true);    
+            aplicaciones = {  
+                nombre: document.getElementById('nameApp').value,
+                icono: document.getElementById('listApp').value,
+                desarrollador: document.getElementById('devApp').value,
+                calificacion: document.getElementById('calif').value   
+            }
+            Categorias = categorias
+            console.log(apk);
+            apk.push(aplicaciones); 
+            cargarAplicaciones();
+            localStorage.setItem("categorias", JSON.stringify(categorias));
+            // for (let i in Categorias) {
+            //     localStorage.setItem(nombre2 + i.toString(), JSON.stringify(Categorias[i]));
+            // }
+            // localStorage.setItem(nomB2, JSON.stringify(Categorias[n]));
+            alert('Apk Succefull')
 
-    let aplicaciones = {  
-        nombre: document.getElementById('nameApp').value,
-        icono: document.getElementById('listApp').value,
-        desarrollador: document.getElementById('devApp').value,
-        calificacion: document.getElementById('calif').value   
-    };
-
-     app.push(aplicaciones); 
-    // categorias.push(categoria);
-  
-    localStorage.setItem("categorias", JSON.stringify(categorias));
-    // localStorage.setItem(nombreC, JSON.stringify(categorias));
-
-
-    cargarAplicaciones();
-    
-  
-
-
-    console.log('new App');
+        }else console.log(false);
+        // var Categorias = categorias
 }
 
+//* Eliminar una APP
+var nombre = "categorias"
 function deleteApp(i){
+    nomb = nombre+n
+    // console.log(nomb);
     indiceAppSelect = i
-    console.log(indiceAppSelect);
+    // console.log(indiceAppSelect);
 
     var catego = $("#categoria").val()
 
-    console.log('Categoria: ',catego);
+    // console.log('Categoria: ',catego);
     app = categoria.aplicaciones
     var Categorias = categorias.aplicaciones
     // console.log(Categorias);
-    app = categoria.aplicaciones[indiceAppSelect]
     
     // console.log(apk);
-    for (let i in categorias) {
-        let ap = Categorias[i].aplicaciones;
+    for (let j in categorias) {
+        let ap = categorias[indiceAppSelect].aplicaciones;
+        apps = categoria.aplicaciones[indiceAppSelect]
+        console.log(apps);
+        nome = categorias[j].nombreCategoria
+        console.log(nome);
         // var app = categoria.aplicaciones[i];
-        if (catego == 0) {
-            // ap.splice(i, 1)
-            ap.splice(app, 1)
+        if (nomb == nome) {
+            console.log(true);
+            ap.splice(j, 1)
+            // ap.splice(app, 1)
+            cargarAplicaciones();
             localStorage.setItem("categorias", JSON.stringify(categorias));
+            console.log('Se elimino App',app);
         } else {
-            console.error('no se puede eliminar');
+             console.error('no se puede eliminar');
         }
 
-        // console.log(Categorias[i].aplicaciones);
-        // apps()
-        // console.log(ap);
-        
     }
-    let app2 = categorias
 
-
-    // console.log('eliminar App:',i);
 
 }
 
-
-// function deleteApp(i){
-//     aplicaciones.splice(i, 1) //*Eliminar splice
-//     generarApps();
-//     localStorage.setItem("aplicaciones", JSON.stringify(aplicaciones));
-//     console.log('eliminar con el indice:',i);
-// }
